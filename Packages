@@ -1,0 +1,20 @@
+#USING "pacman" AS THE PACKAGE MANAGER FOR ADD-ON PACKAGES
+
+#installing "pacman"
+install.packages("pacman")
+#installing and loading add-on packages using "pacman" including pacman itself
+pacman::p_load(pacman,dplyr,GGally,ggplot2,ggthemes,ggvis,httr,lubridate,plotly,rio,rmarkdown,shiny,stringr,tidyr)
+#loading base packages such as "datasets" package
+library(datasets)
+
+#CLEANING UP AFTER USING PACKAGES
+
+#clearing all add-on packages
+p_unload(all)
+#clearing specific base packages such as "datasets"
+detach("package:datasets", unload=TRUE)
+
+#CLEARING CONSOLE
+
+#shortcut for clearing console is "ctrl+L" 
+cat("\014")
