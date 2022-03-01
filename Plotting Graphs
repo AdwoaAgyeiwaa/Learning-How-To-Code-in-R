@@ -1,0 +1,57 @@
+#LOADING PACKAGE AND DATA
+
+#load base packgae for data
+library(datasets)
+#let's use the iris dataset as an example
+#load first few lines of the data
+head(iris)
+
+#PLOTTING DATA WITH "PLOT()" COMMAND
+
+#use "?plot" to get help on how to use this command
+?plot
+#plotting categorical variable
+plot(iris$Species)
+#plotting quantitative variable
+plot(iris$Petal.Length)
+#plotting categorical x quantitative variables
+plot(iris$Species, iris$Petal.Length)
+#plotting a quantitative pair of variables
+plot(iris$Petal.Length, iris$Petal.Width)
+#plotting entire dataframe
+plot(iris)
+
+#PLOTTING WITH OPTIONS
+
+plot(iris$Petal.Length, iris$Petal.Width,
+     #colour of my plots using a Hex code for blue
+     col = "#0000FF",
+     #"cross" point character for points
+     pch = 4,
+     #title of graph
+     main = "Relationship Between Iris Petal Length And Iris Petal Width",
+     #x,y labels
+     xlab = "Petal Length",
+     ylab = "Petal Width")
+
+#PLOTTING FORMULAS WITH "PLOT()" COMMAND
+
+#plotting cosine with limits 0 and 2*pi
+plot(cos,0,2*pi)
+#plotting exponential curve from 1 to 5
+plot(exp,1,5)
+#plotting density of a normal distribution between -3 and +3
+plot(dnorm,-3,+3)
+
+#PLOTTING WITH OPTIONS
+
+plot(dnorm,-3,+3,
+     col = "#cc0000",
+     #line width(making it thicker)
+     lwd = 5,
+     main = "Normal Distribution",
+     xlab = "z-scores",
+     ylab = "Density")
+
+#CLEANING UP AFTER USING PACKAGES
+detach("package:datasets", unload=TRUE)
