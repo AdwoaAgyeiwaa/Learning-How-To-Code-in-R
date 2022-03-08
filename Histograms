@@ -1,0 +1,55 @@
+#LOADING DATASETS PACKAGES AND DATA
+
+library(datasets)
+head(iris)
+
+#DISPLAYING HISTOGRAMS ON QUANTITATIVE VARIABLES USING THE "hist" COMMAND
+
+hist(iris$Sepal.Length)
+hist(iris$Sepal.Width)
+hist(iris$Petal.Length)
+hist(iris$Petal.Width)
+
+#DISPLAYING HISTOGRAMS BY SPECIES(GROUPS)
+
+#divide the display screen in 3 rows and 1 column
+#"par()" function allows setting of parameters to the plot
+#"mfrow()" parameter allows splitting of screen in several panels
+#"c" is concatenate which treats the two numbers as one unit
+par(mfrow = c(3,1))
+#histogram for  each species using options
+#note that "[]" is a selector for choosing a particular iris species
+hist(iris$Petal.Width [iris$Species == "setosa"],
+     #petal width of all species span from about 0 to about 3
+     xlim = c(0,3),
+     #9 is a good histogram scale suggestion
+     breaks = 9,
+     main = "Petal Width for Setosa",
+     xlab = "Petal Width",
+     col = "red")
+hist(iris$Petal.Width [iris$Species == "versicolor"],
+     xlim = c(0,3),
+     breaks = 9,
+     main = "Petal Width for Versicolor",
+     xlab = "Petal Width",
+     col = "blue")
+hist(iris$Petal.Width [iris$Species == "virginica"],
+     xlim = c(0,3),
+     breaks = 9,
+     main = "Petal Width for Virginica",
+     xlab = "Petal Width",
+     col = "yellow")
+
+#RESTORE GRAPHIC PARAMETER
+
+#going back to the one row, one column view
+par(mfrow=c(1,1))
+
+#CLEANING UP AFTER USING PACKAGES
+
+#clearing "datasets" package
+detach("package:datasets", unload=TRUE)
+
+#CLEARING CONSOLE
+
+cat("\014")
