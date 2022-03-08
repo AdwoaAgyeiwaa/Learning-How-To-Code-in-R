@@ -1,0 +1,18 @@
+#LOADING DATASETS PACKAGES AND DATA
+
+library(datasets)
+#finding information about the "mtcars" dataset
+?mtcars
+#viewing first few rows of the "mtcars" data
+head(mtcars)
+
+#Q1. SHOW A BAR CHART OF THE NUMBER OF AUTOMOBILES WITH A CERTAIN NUMBER OF CYLINDERS
+
+#create a summary table of the raw data
+#i.e. create a table with frequencies for each category using the "table" command
+#data environment(or object) is cylinders
+cylinders <- table(mtcars$cyl)
+#display barchart
+barplot(cylinders)
+#"plot" command can be used for a line chart
+plot(cylinders)
