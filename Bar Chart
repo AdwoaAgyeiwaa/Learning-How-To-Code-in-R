@@ -6,7 +6,7 @@ library(datasets)
 #viewing first few rows of the "mtcars" data
 head(mtcars)
 
-#Q1. SHOW A BAR CHART OF THE NUMBER OF AUTOMOBILES WITH A CERTAIN NUMBER OF CYLINDERS
+#QUESTION: SHOW A BAR CHART OF THE NUMBER OF AUTOMOBILES WITH A CERTAIN NUMBER OF CYLINDERS
 
 #create a summary table of the raw data
 #i.e. create a table with frequencies for each category using the "table" command
